@@ -1,0 +1,46 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Titanic{% endblock %}
+
+{% block navbar %}
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#">Watson ML Customer Segment Analysis</a>
+        </div>    
+    </nav>
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <form method="POST" action="">
+        <div class="row">
+            <div class="col-md-12">
+            <h3>To make a customer analysis prediction,
+                enter the following information:<h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8">
+
+                {{ wtf.form_field(form.MyField) }}
+                {{ wtf.form_field(form.MyField2) }}
+                {{ wtf.form_field(form.MyField3) }}
+                {{ wtf.form_field(form.MyField4) }}
+                {{ wtf.form_field(form.MyField5) }}
+
+                {{ form.submit() }}
+                {{ form.hidden_tag() }}
+            </div>
+            <!---
+            <div class="col-md-3">
+            <img src= https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzlUYaJ9xykGC-N5PijcV_eDBGCXy_pMn7sy6ymrVypmJ22q5ZmA
+ width="400" height="400" alt="Titanic" title="Titanic" border= "">
+            </div>
+            -->
+            <div class="col-md-1">
+            </div>
+        </div> 
+    </div>   
+{% endblock %}
